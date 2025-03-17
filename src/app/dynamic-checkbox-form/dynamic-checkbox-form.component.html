@@ -1,0 +1,20 @@
+<h2>Allow shipping to the following states</h2>
+<section>
+    <form [formGroup]="form">
+        <div>
+            <label>
+                <input type="checkbox" [formControl]="selectAll" />
+                Select All
+            </label>
+        </div>
+        @for (option of states; track option.value) {
+            <div>
+                <label>
+                    <input type="checkbox" [formControlName]="option.value" />
+                    {{ option.label }}
+                </label>
+            </div>
+        }
+    </form>
+    <div>{{ selectedValues }}</div>
+</section>
